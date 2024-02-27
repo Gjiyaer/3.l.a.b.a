@@ -1,0 +1,129 @@
+@startuml
+abstract class object.ObjectName {
+~ String name
++ String getName()
++ String addEnding(String,String)
++ String addPredl(String,String)
++ void addAd(AdjectivesAdverbs)
+}
+interface interfs.VRaszveteSil {
+~ String karlsonSay()
+}
+class except.KarlsonActionException {
+}
+enum enums.AdjectivesAdverbs {
++  ONCE
++  BADLY
++  LONGAGO
++  CALM
+- String descr
++ String toString()
+}
+class except.NullPointerInCharacterObject {
+}
+interface interfs.Changable {
+~ String addEnding(String,String)
+~ String addPredl(String,String)
+}
+enum enums.Places {
++  ROOF
++  LITTLEHOUSE
++  HOME
++  NOTHOME
+- String descr
++ String toString()
+}
+class object.Character {
+- Places place
++ void retObject(Objects)
++ void doAction(Actions)
++ Places getPlace()
++ void doAction(String,String,String,Character)
++ String toString()
++ void printName()
++ void changePlace(Places)
++ String addEnding(String,String)
++ String addPredl(String,String)
+}
+class object.Mama {
+- void alarm()
++ void checkWhereMalish(Malish)
++ boolean isAngry()
+}
+class Main {
++ {static} void main(String[])
+}
+class object.Malish {
+- Objects object
+~ int goodDealscount
++ void takeAway()
++ void dreaming(Actions,Places)
++ void visitPlace(String,Places)
++ boolean compareAge(AdjectivesAdverbs)
++ void comparePast(AdjectivesAdverbs)
++ void canMalishClimb(Places)
++ String askYourself(Actions,Character)
++ void gdeMama(Mama)
++ void canIAsk(Character)
++ void refuse(Mama)
++ void doAction(Actions)
++ void canHeTakeAway()
++ void doAGoodDeal()
++ int getGoodDealscount()
+}
+class object.Karlson {
+- Actions action
+~ int goodDealscount
+~ Hands hand
+- {static} int reapiting
++ int hashCode()
++ String karlsonSay()
++ boolean equals(Object)
++ void doAction(Actions)
+- void validAction(String)
++ void lookAtMyHands()
+- void updateHand(Actions)
++ void doAGoodDeal()
++ int getGoodDealscount()
++ void justice(Malish,Karlson)
++ {static} int getHow()
++ void cleaningFloors(Malish)
+}
+class object.Karlson$Hands {
+~ boolean mozoli
++ void afterHardWork()
++ void afterSomeRest()
++ boolean getCond()
+}
+class object.Karlson$checkingTheJustice {
+}
+class object.NeverRepeat {
++ void theOnlyOneMeth()
+}
+enum enums.Objects {
++  ALBUM
+- String descr
++ String toString()
+}
+enum enums.Actions {
++  DREAM
++  SCARE
++  COULD
++  HARDWORK
++  UNDERSTAND
+- String descr
++ String toString()
+}
+
+
+interfs.Changable <|.. object.ObjectName
+except.Exception <|-- except.KarlsonActionException
+except.RuntimeException <|-- except.NullPointerInCharacterObject
+object.ObjectName <|-- object.Character
+object.Character <|-- object.Mama
+object.Character <|-- object.Malish
+interfs.VRaszveteSil <|.. object.Karlson
+object.Character <|-- object.Karlson
+object.Karlson +.. object.Karlson$Hands
+object.Karlson +.. object.Karlson$checkingTheJustice
+@enduml
